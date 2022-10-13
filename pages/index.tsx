@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Layout } from "../components/Layout";
+import { Layout } from "../components/layout/Layout";
 import { Title } from "../components/ui/title/Title";
 import { Button } from "../components/ui/button/Button";
 

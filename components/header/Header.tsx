@@ -1,7 +1,9 @@
+import { header } from "./Header.css";
+
 export function Header() {
   return (
     <>
-      <header>Header</header>
+      <header className={header}>Header</header>
     </>
   );
 }

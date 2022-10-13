@@ -1,7 +1,9 @@
+import { footer } from "./Footer.css";
+
 export function Footer() {
   return (
     <>
-      <header>Footer</header>
+      <footer className={footer}>Footer</footer>
     </>
   );
 }
