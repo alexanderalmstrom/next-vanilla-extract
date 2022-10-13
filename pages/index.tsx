@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Layout } from "../components/Layout";
-import { Title } from "../components/title/Title";
-import { Button } from "../components/button/Button";
+import { Title } from "../components/ui/title/Title";
+import { Button } from "../components/ui/button/Button";
 
 const Home: NextPage = () => {
   return (
