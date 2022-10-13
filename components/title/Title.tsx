@@ -1,0 +1,10 @@
+interface TitleProps {
+  type: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  children: React.ReactNode;
+}
+
+export function Title({ type, children }: TitleProps) {
+  const Component = type;
+
+  return <Component>{children}</Component>;
+}

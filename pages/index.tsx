@@ -1,15 +1,14 @@
 import type { NextPage } from "next";
 import { Button } from "../components/button/Button";
 import { Layout } from "../components/Layout";
+import { Title } from "../components/title/Title";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Layout>
-        <h1>Hello</h1>
-        <Button>Button</Button>
-      </Layout>
-    </>
+    <Layout>
+      <Title type="h1">Hello</Title>
+      <Button>Button</Button>
+    </Layout>
   );
 };
 
