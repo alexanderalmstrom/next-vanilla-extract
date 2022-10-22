@@ -1,17 +1,42 @@
-import React, { useContext, useMemo } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { ThemeContext } from "../contexts/theme";
+import { ThemeProviderProps, ThemeTypes, UseThemeProps } from "../types/theme";
 
-export interface ThemeProviderProps {
-  children?: React.ReactNode;
-  theme?: string;
-}
+function Theme({
+  children,
+  forcedTheme,
+  defaultTheme = "light",
+}: ThemeProviderProps) {
+  const [theme, setThemeState] = useState(defaultTheme);
 
-function Theme({ children, theme }: ThemeProviderProps) {
+  const setTheme = useCallback(
+    (theme: ThemeTypes) => {
+      setThemeState(theme);
+    },
+    [forcedTheme]
+  );
+
+  const applyTheme = useCallback((theme: ThemeTypes) => {
+    setThemeState(theme);
+  }, []);
+
+  useEffect(() => {
+    applyTheme(forcedTheme ?? theme);
+  }, [forcedTheme, theme]);
+
   const themeContextProviderValue = useMemo(
     () => ({
       theme,
+      setTheme,
+      forcedTheme,
     }),
-    [theme]
+    [theme, setTheme, forcedTheme]
   );
 
   return (
@@ -22,9 +47,9 @@ function Theme({ children, theme }: ThemeProviderProps) {
 }
 
 export function ThemeProvider(props: ThemeProviderProps) {
-  const context = useContext(ThemeContext);
+  const theme = useContext<UseThemeProps | undefined>(ThemeContext);
 
-  if (context) return <>{props.children}</>;
+  if (theme) return <>{props.children}</>;
 
   return <Theme {...props} />;
 }

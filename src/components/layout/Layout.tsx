@@ -1,5 +1,7 @@
-import { useContext } from "react";
-import { ThemeContext, ThemeContextProps } from "../../contexts/theme";
+import { useTheme } from "../../hooks/theme";
+import { darkTheme } from "../../themes/dark.css";
+import { lightTheme } from "../../themes/light.css";
+import { themeClass } from "../../themes/theme.css";
 import { Footer } from "../footer/Footer";
 import { Header } from "../header/Header";
 import { main } from "./Layout.css";
@@ -9,13 +11,15 @@ export interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  const context = useContext<ThemeContextProps | undefined>(ThemeContext);
+  const { theme } = useTheme();
 
   return (
-    <>
-      <Header />
-      <main className={main}>{children}</main>
-      <Footer />
-    </>
+    <div className={theme === "dark" ? darkTheme : lightTheme}>
+      <div className={themeClass}>
+        <Header />
+        <main className={main}>{children}</main>
+        <Footer />
+      </div>
+    </div>
   );
 }

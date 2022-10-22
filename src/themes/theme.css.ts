@@ -9,7 +9,8 @@ export const vars = createThemeContract({
   },
 });
 
-export const styles = style({
+export const themeClass = style({
   backgroundColor: vars.backgroundColor.body,
   color: vars.color.body,
+  minHeight: "100vh",
 });

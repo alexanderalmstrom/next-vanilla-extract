@@ -1,9 +1,4 @@
 import { createContext } from "react";
+import { UseThemeProps } from "../types/theme";
 
-export interface ThemeContextProps {
-  theme?: string;
-}
-
-export const ThemeContext = createContext<ThemeContextProps | undefined>(
-  undefined
-);
+export const ThemeContext = createContext<UseThemeProps | undefined>(undefined);
