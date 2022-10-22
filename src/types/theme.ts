@@ -2,8 +2,8 @@ export type ThemeTypes = "light" | "dark" | string;
 
 export interface UseThemeProps {
   forcedTheme?: ThemeTypes;
-  setTheme: (theme: string) => void;
   theme?: ThemeTypes;
+  setTheme: (theme: string) => void;
 }
 
 export interface ThemeProviderProps {
