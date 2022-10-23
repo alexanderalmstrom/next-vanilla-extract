@@ -13,30 +13,27 @@ function Theme({
   forcedTheme,
   defaultTheme = "light",
 }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState(defaultTheme);
+  const [themeState, setThemeState] = useState<ThemeTypes>(defaultTheme);
 
   const setTheme = useCallback(
-    (theme: ThemeTypes) => {
-      setThemeState(theme);
-    },
-    [forcedTheme]
+    (theme: ThemeTypes) => setThemeState(theme),
+    [forcedTheme, defaultTheme]
   );
 
-  const applyTheme = useCallback((theme: ThemeTypes) => {
-    setThemeState(theme);
-  }, []);
+  useEffect(() => {
+    setThemeState(defaultTheme);
+  }, [defaultTheme]);
 
   useEffect(() => {
-    applyTheme(forcedTheme ?? theme);
-  }, [forcedTheme, theme]);
+    setThemeState(forcedTheme ?? themeState);
+  }, [forcedTheme, themeState]);
 
   const themeContextProviderValue = useMemo(
     () => ({
-      theme,
+      theme: themeState,
       setTheme,
-      forcedTheme,
     }),
-    [theme, setTheme, forcedTheme]
+    [themeState, setTheme]
   );
 
   return (
