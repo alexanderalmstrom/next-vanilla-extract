@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { darkTheme } from "../../themes/dark.css";
 import { lightTheme } from "../../themes/light.css";
 import { themeClass } from "../../themes/theme.css";
@@ -11,9 +12,5 @@ export default function Theme({ children }: ThemeProps) {
   const { theme } = useTheme();
   const themeStyle = theme === "dark" ? darkTheme : lightTheme;
 
-  return (
-    <div className={themeStyle}>
-      <div className={themeClass}>{children}</div>
-    </div>
-  );
+  return <div className={classNames(themeStyle, themeClass)}>{children}</div>;
 }

@@ -2,6 +2,7 @@ import "../styles/main.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "../providers/theme";
+import Theme from "../components/theme/Theme";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -13,7 +14,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <ThemeProvider>
-        <Component {...pageProps} />
+        <Theme>
+          <Component {...pageProps} />
+        </Theme>
       </ThemeProvider>
     </>
   );
