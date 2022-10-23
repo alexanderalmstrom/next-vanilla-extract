@@ -6,7 +6,7 @@ import { Button } from "../components/ui/button/Button";
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Title type="h1">Hello</Title>
+      <Title as="h1">Hello</Title>
       <Button>Button</Button>
     </Layout>
   );
