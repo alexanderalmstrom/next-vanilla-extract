@@ -31,6 +31,9 @@ export const buttonRecipe = recipe({
         paddingBottom: "0.1em",
         borderBottom: "1px solid currentColor",
         borderRadius: 0,
+        ":hover": {
+          borderBottomColor: "transparent",
+        },
       },
     },
     size: {
