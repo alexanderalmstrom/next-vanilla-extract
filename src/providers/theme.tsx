@@ -21,7 +21,7 @@ function Theme({
 
       setThemeState(theme);
     },
-    [forcedTheme, defaultTheme]
+    [forcedTheme]
   );
 
   useEffect(() => {
