@@ -16,7 +16,11 @@ function Theme({
   const [themeState, setThemeState] = useState<ThemeTypes>(defaultTheme);
 
   const setTheme = useCallback(
-    (theme: ThemeTypes) => setThemeState(theme),
+    (theme: ThemeTypes) => {
+      if (forcedTheme) return;
+
+      setThemeState(theme);
+    },
     [forcedTheme, defaultTheme]
   );
 
