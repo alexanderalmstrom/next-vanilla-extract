@@ -8,7 +8,7 @@ export const header = style([
     top: 0,
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "start",
+    alignItems: "flex-start",
     gap: "2rem",
     paddingTop: "1.5rem",
     paddingBottom: "1.5rem",

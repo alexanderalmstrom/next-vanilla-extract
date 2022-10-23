@@ -1,4 +1,5 @@
 import { recipe } from "@vanilla-extract/recipes";
+import { hero } from "../../hero/Hero.css";
 
 export const titleRecipe = recipe({
   base: {
@@ -13,6 +14,11 @@ export const titleRecipe = recipe({
       display: {
         fontSize: "clamp(3rem, 6vw, 12rem)",
         lineHeight: 0.9,
+        selectors: {
+          [`${hero} &`]: {
+            marginBottom: 0,
+          },
+        },
       },
       large: {
         fontSize: "3rem",

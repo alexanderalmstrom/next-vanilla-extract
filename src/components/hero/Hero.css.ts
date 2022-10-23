@@ -6,6 +6,7 @@ export const hero = style({
   padding: "2rem",
   display: "flex",
   flexDirection: "column",
-  alignItems: "start",
+  alignItems: "flex-start",
   justifyContent: "center",
+  gap: "3rem",
 });
