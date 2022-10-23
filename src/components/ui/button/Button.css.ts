@@ -9,6 +9,8 @@ export const buttonRecipe = recipe({
     letterSpacing: "0.03em",
     border: "1px solid currentColor",
     borderRadius: 4,
+    whiteSpace: "nowrap",
+    cursor: "pointer",
   },
   variants: {
     color: {
@@ -19,6 +21,15 @@ export const buttonRecipe = recipe({
       secondary: {
         backgroundColor: "#FFFFFF",
         color: "#000000",
+      },
+    },
+    variant: {
+      link: {
+        padding: 0,
+        border: 0,
+        paddingBottom: "0.1em",
+        borderBottom: "1px solid currentColor",
+        borderRadius: 0,
       },
     },
     size: {
