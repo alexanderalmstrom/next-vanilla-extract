@@ -35,7 +35,7 @@ const Home: NextPage = () => {
         <Title as="h1" size="display">
           {greeting}!
         </Title>
-        <Button onClick={generateRandomGreeting}>
+        <Button size="large" onClick={generateRandomGreeting}>
           Do not click this button
         </Button>
       </Hero>

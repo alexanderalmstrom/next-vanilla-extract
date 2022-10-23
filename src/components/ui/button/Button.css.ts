@@ -6,6 +6,7 @@ export const buttonRecipe = recipe({
     backgroundColor: "transparent",
     color: "currentColor",
     fontSize: 16,
+    fontWeight: 500,
     letterSpacing: "0.03em",
     border: "1px solid currentColor",
     borderRadius: 4,

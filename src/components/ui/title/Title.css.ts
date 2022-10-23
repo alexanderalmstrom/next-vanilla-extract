@@ -12,8 +12,10 @@ export const titleRecipe = recipe({
   variants: {
     size: {
       display: {
-        fontSize: "clamp(3rem, 6vw, 12rem)",
-        lineHeight: 0.9,
+        fontSize: "clamp(4rem, 8vw, 12rem)",
+        lineHeight: 1,
+        letterSpacing: "-0.02em",
+        fontWeight: 700,
         selectors: {
           [`${hero} &`]: {
             marginBottom: 0,
