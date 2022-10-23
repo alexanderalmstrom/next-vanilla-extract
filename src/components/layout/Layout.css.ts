@@ -1,6 +1,9 @@
 import { style } from "@vanilla-extract/css";
+import { container } from "../../styles/container.css";
 
-export const main = style({
-  maxWidth: 1170,
-  margin: "auto",
-});
+export const main = style([
+  container,
+  {
+    maxWidth: 1170,
+  },
+]);

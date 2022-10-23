@@ -12,7 +12,7 @@ export function Header() {
   return (
     <>
       <header className={header}>
-        <Button color="primary" size="small" onClick={toggleTheme}>
+        <Button color="primary" onClick={toggleTheme}>
           Current theme: {theme}
         </Button>
       </header>
