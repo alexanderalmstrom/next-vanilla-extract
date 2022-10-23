@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </Head>
-      <ThemeProvider>
+      <ThemeProvider defaultTheme="dark">
         <Theme>
           <Component {...pageProps} />
         </Theme>
