@@ -1,6 +1,7 @@
 import { useTheme } from "../../hooks/theme";
 import { Button } from "../ui/button/Button";
-import { header } from "./Header.css";
+import { Title } from "../ui/title/Title";
+import { header, title } from "./Header.css";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
@@ -12,8 +13,11 @@ export function Header() {
   return (
     <>
       <header className={header}>
-        <Button color="primary" onClick={toggleTheme}>
-          Current theme: {theme}
+        <Title as="h1" size="small" className={title}>
+          Next Vanilla Extract
+        </Title>
+        <Button variant="link" size="small" onClick={toggleTheme}>
+          Theme: {theme}
         </Button>
       </header>
     </>
