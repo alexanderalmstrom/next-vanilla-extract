@@ -9,9 +9,10 @@ export interface ThemeProps {
 
 export default function Theme({ children }: ThemeProps) {
   const { theme } = useTheme();
+  const themeStyle = theme === "dark" ? darkTheme : lightTheme;
 
   return (
-    <div className={theme === "dark" ? darkTheme : lightTheme}>
+    <div className={themeStyle}>
       <div className={themeClass}>{children}</div>
     </div>
   );
