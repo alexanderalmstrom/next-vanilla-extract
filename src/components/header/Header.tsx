@@ -12,7 +12,9 @@ export function Header() {
   return (
     <>
       <header className={header}>
-        <Button onClick={toggleTheme}>Current theme: {theme}</Button>
+        <Button color="primary" size="small" onClick={toggleTheme}>
+          Current theme: {theme}
+        </Button>
       </header>
     </>
   );
