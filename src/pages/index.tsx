@@ -20,13 +20,15 @@ const greetings = [
 const Home: NextPage = () => {
   const [greeting, setGreeting] = useState("");
 
-  const generateRandomGreeting = useCallback(
-    () => setGreeting(greetings[Math.floor(Math.random() * greetings.length)]),
-    []
-  );
+  const setRandomGreeting = () => {
+    const randomGreeting =
+      greetings[Math.floor(Math.random() * greetings.length)];
+
+    setGreeting(randomGreeting);
+  };
 
   useEffect(() => {
-    generateRandomGreeting();
+    setRandomGreeting();
   }, []);
 
   return (
@@ -35,7 +37,7 @@ const Home: NextPage = () => {
         <Title as="h1" size="display">
           {greeting}!
         </Title>
-        <Button size="large" onClick={generateRandomGreeting}>
+        <Button size="large" onClick={setRandomGreeting}>
           Do not click this button
         </Button>
       </Hero>
